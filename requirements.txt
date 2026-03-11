@@ -2,3 +2,4 @@ Django==6.0.3
 django-tailwind==3.6.0
 dj-database-url==1.1.0
 gunicorn==23.0.0
+whitenoise==6.12.0
