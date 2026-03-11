@@ -123,3 +123,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic target for production
+
+# CSRF and Security Settings
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.railway.app',
+    'http://*.railway.app',
+    'https://web-production-ef4a0.up.railway.app',
+    'http://web-production-ef4a0.up.railway.app',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+]
+
+CSRF_COOKIE_SECURE = False  # Set to True if using HTTPS only
+SESSION_COOKIE_SECURE = False  # Set to True if using HTTPS only
+CSRF_COOKIE_HTTPONLY = False  # Allow CSRF token in HTML forms
