@@ -1,2 +1,2 @@
-release: python manage.py migrate && python init_db.py && python reset_admin.py
-web: gunicorn portfolio.wsgi --log-file -
+release: python manage.py migrate && python init_db.py && python reset_admin.py && python manage.py shell -c "from django.contrib.auth.models import User; print(f'Admin user exists: {User.objects.filter(username=\"admin\").exists()}')"
+web: gunicorn --bind 0.0.0.0:$PORT portfolio.wsgi:application
